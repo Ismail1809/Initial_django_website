@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'account/sign_in_css.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'account/normalize.css' %}">
+	<title></title>
+</head>
+<body>
+	<div class="form">
+		<form action="/sign_in/" method="post" target="_self">
+			<h1>Вход</h1>
+			<div class="input-form">
+				<input name = "login"type="text" placeholder="Логин">
+			</div>
+			<div class="input-form">
+				<input name = "password" type="password" placeholder="Пароль">
+			</div>
+			<div class="input-form">
+				{% csrf_token %}<input type="submit" value="Войти">
+			</div>
+		</form>
+		<a class="forget">Забыли пароль?</a>
+		<a href="/" class="forget">Назад</a>
+	</div>
+</body>
