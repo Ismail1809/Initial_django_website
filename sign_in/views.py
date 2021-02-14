@@ -10,13 +10,13 @@ def sign_in_page(request):
 		form = forms.SignIn(request.POST)
 		print(form.is_valid())
 
-		# if len(models.Product.objects.get(login = form.cleaned_data["login"], password = form.cleaned_data["password"])) != 0:
+		# if len(models.User.objects.get(login = form.cleaned_data["login"], password = form.cleaned_data["password"])) != 0:
 		# 	print(1)
 		# else:
 		# 	print(0)
 		if form.is_valid() == True:
 			try:
-				models.Product.objects.get(login = form.cleaned_data["login"], password = form.cleaned_data["password"])
+				models.User.objects.get(login = form.cleaned_data["login"], password = form.cleaned_data["password"])
 				print(1)
 				return redirect('/')
 			except:

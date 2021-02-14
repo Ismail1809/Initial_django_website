@@ -19,7 +19,7 @@ def sign_up_page(request):
 				"password": form.cleaned_data["password"],
 			}
 
-			prod = models.Product(login = data["login"], password = data["password"])
+			prod = models.User(login = data["login"], password = data["password"])
 			prod.save()
 	
 
